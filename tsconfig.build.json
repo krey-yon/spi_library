@@ -19,6 +19,8 @@
   },
   "include": [
     "index.ts",
+    "client.ts",
+    "server.ts",
     "spi_client.ts",
     "spi_server.ts",
     "classes/**/*",

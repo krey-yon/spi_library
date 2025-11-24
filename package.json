@@ -1,6 +1,6 @@
 {
   "name": "@kreyon/spi_library",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Solana Payment Integration library with loyalty rewards, memberships, and dynamic NFT generation",
   "type": "module",
   "main": "./dist/index.js",
