@@ -1,0 +1,69 @@
+{
+  "name": "@vikas/spi_library",
+  "version": "0.1.0",
+  "description": "Solana Payment Integration library with loyalty rewards, memberships, and dynamic NFT generation",
+  "module": "index.ts",
+  "type": "module",
+  "main": "index.ts",
+  "private": false,
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./client": {
+      "import": "./spi_client.ts",
+      "types": "./spi_client.ts"
+    },
+    "./server": {
+      "import": "./spi_server.ts",
+      "types": "./spi_server.ts"
+    }
+  },
+  "files": [
+    "index.ts",
+    "spi_client.ts",
+    "spi_server.ts",
+    "classes/**/*",
+    "shared/**/*",
+    "utils/**/*"
+  ],
+  "keywords": [
+    "solana",
+    "solana-pay",
+    "payment",
+    "loyalty",
+    "rewards",
+    "nft",
+    "web3",
+    "blockchain",
+    "anchor"
+  ],
+  "author": "Vikas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krey-yon/spi_v1"
+  },
+  "bugs": {
+    "url": "https://github.com/krey-yon/spi_v1"
+  },
+  "homepage": "https://spi.kreyon.in",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@solana/pay": "^0.2.6",
+    "@solana/web3.js": "^1.98.4",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.6.0",
+    "sharp": "^0.34.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+# Development files
+node_modules/
+*.log
+*.lock
+bun.lock
+
+# Testing & examples
+examples/
+todo.txt
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+*.tsbuildinfo
