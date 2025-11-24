@@ -38,8 +38,8 @@ export default class SpiClient {
    * @param endpoint
    * @returns
    */
-  get_qr_code(endpoint: string) {
-    const qr = createQR(`solana:${endpoint}`);
+  get_qr_code(endpoint: string, size: number) {
+    const qr = createQR(`solana:${endpoint}`, size);
     return qr;
   }
 
@@ -47,8 +47,8 @@ export default class SpiClient {
     const ref = await findReference(this.provider.connection, referenceKey, {
       finality: "confirmed",
     });
-    
-    if(ref.signature !== null) {
+
+    if (ref.signature !== null) {
       console.log("Payment confirmed");
       return true;
     } else {
