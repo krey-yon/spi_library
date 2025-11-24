@@ -1,11 +1,13 @@
 /**
  * Solana Payment Integration (SPI) Library
  * 
- * Main exports for client and server-side Solana payment operations
- * with loyalty rewards, memberships, and dynamic NFT generation.
+ * ⚠️ WARNING: This exports both client and server code.
+ * For Next.js, use specific imports:
+ * - import { SpiClient } from "@kreyon/spi_library/client"
+ * - import { SpiServer } from "@kreyon/spi_library/server"
  */
 
-// Core classes
+// Export everything (use with caution in Next.js)
 export { default as SpiClient } from "./spi_client.js";
 export { default as SpiServer } from "./spi_server.js";
 

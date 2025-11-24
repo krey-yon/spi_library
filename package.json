@@ -1,6 +1,6 @@
 {
   "name": "@kreyon/spi_library",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Solana Payment Integration library with loyalty rewards, memberships, and dynamic NFT generation",
   "type": "module",
   "main": "./dist/index.js",
@@ -13,12 +13,13 @@
       "types": "./dist/index.d.ts"
     },
     "./client": {
-      "import": "./dist/spi_client.js",
-      "types": "./dist/spi_client.d.ts"
+      "import": "./dist/client.js",
+      "types": "./dist/client.d.ts"
     },
     "./server": {
-      "import": "./dist/spi_server.js",
-      "types": "./dist/spi_server.d.ts"
+      "react-server": "./dist/server.js",
+      "default": "./dist/server.js",
+      "types": "./dist/server.d.ts"
     }
   },
   "files": [
@@ -49,7 +50,7 @@
     "url": "https://github.com/krey-yon/spi_library"
   },
   "bugs": {
-    "url": "https://github.com/krey-yon/spi_library"
+    "url": "https://github.com/krey-yon/spi_library/issues"
   },
   "homepage": "https://spi.kreyon.in",
   "devDependencies": {
