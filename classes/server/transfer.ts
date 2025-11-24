@@ -19,14 +19,6 @@ export default async function spiTransfer(
   discount: number,
   rewardAlgo: Algorithim,
 ) {
-  const mintAmount = await algorithm(
-    rewardAlgo || "SPI_ALGO_1",
-    seeds,
-    userKey,
-    transferAmount,
-    program,
-  );
-
   const [userAsaPda] = anchor.web3.PublicKey.findProgramAddressSync(
     [Buffer.from(seeds), userKey.toBuffer()],
     program.programId,
@@ -34,6 +26,16 @@ export default async function spiTransfer(
 
   const accountInfo =
     await program.provider.connection.getAccountInfo(userAsaPda);
+  let mintAmount = 0;
+  if (accountInfo) {
+    mintAmount = await algorithm(
+      rewardAlgo || "SPI_ALGO_1",
+      seeds,
+      userKey,
+      transferAmount,
+      program,
+    );
+  }
 
   const tx = await program.methods
     .mainTransfer(
