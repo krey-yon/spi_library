@@ -2,32 +2,35 @@
   "name": "@kreyon/spi_library",
   "version": "0.1.0",
   "description": "Solana Payment Integration library with loyalty rewards, memberships, and dynamic NFT generation",
-  "module": "index.ts",
   "type": "module",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "private": false,
   "exports": {
     ".": {
-      "import": "./index.ts",
-      "types": "./index.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./client": {
-      "import": "./spi_client.ts",
-      "types": "./spi_client.ts"
+      "import": "./dist/spi_client.js",
+      "types": "./dist/spi_client.d.ts"
     },
     "./server": {
-      "import": "./spi_server.ts",
-      "types": "./spi_server.ts"
+      "import": "./dist/spi_server.js",
+      "types": "./dist/spi_server.d.ts"
     }
   },
   "files": [
-    "index.ts",
-    "spi_client.ts",
-    "spi_server.ts",
-    "classes/**/*",
-    "shared/**/*",
-    "utils/**/*"
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
   ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
   "keywords": [
     "solana",
     "solana-pay",
@@ -50,7 +53,8 @@
   },
   "homepage": "https://spi.kreyon.in",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "typescript": "^5",
